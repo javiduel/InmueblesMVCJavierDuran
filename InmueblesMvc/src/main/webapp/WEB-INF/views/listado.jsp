@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src ='<c:url value="/resources/js/jquery-1.11.1.min.js"/>'></script>
 <title>Insert title here</title>
 </head>
 
@@ -18,8 +19,25 @@
    <td>${inmueble.direccion }</td>
    <td>${inmueble.precio }</td>
    <td><a href="detalle.html?id=${inmueble.idInmueble}"> Ver detalle</a></td>
+   <td><a href="#" id="lnkDetalle" onclick="evento(${inmueble.idInmueble})">Ver Detalle en Ajax</a></td>
   </tr>
-   </c:forEach>
+ </c:forEach>
 </table>
+<div id="divDetalle"></div>
+<script type="text/javascript">
+function evento(id){
+  	var url="inmueble/"+id;
+  	$.get(url,function(res){
+var resultado="<ul>";
+   resultado+="<li>"+ res.idInmueble+"<li>";
+   resultado+="<li>"+ res.direccion+"<li>";
+   resultado+="<li>"+ res.precio+"<li>";
+   resultado+="<li>"+ res.propietario.nombre+"<li>";
+   resultado+="<li>"+ res.inquilino.nombre+"<li>";
+   $("#divDetalle").html(resultado);
+  	});
+	
+}
+</script>
 </body>
 </html>
