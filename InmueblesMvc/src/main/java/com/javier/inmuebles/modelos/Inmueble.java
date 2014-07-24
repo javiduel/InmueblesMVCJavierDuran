@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
 /**
@@ -23,8 +24,10 @@ import org.hibernate.annotations.NamedQuery;
 @Table(name="Inmueble"
     ,catalog="teide2014"
 )
-@NamedQuery(name="Inmueble.buscador",
-query="from Inmueble i where i.direccion like :texto")
+@NamedQueries({
+     @NamedQuery(name="Inmueble.buscador", query="from Inmueble i where i.direccion like :texto"),
+     @NamedQuery(name = "Inmueble.buscadorPrecio", query = "from Inmueble i where i.precio= :texto")
+})
 
 
 public class Inmueble  implements java.io.Serializable {
