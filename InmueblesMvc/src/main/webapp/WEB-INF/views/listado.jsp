@@ -17,6 +17,7 @@
    <td>${inmueble.idInmueble }</td>
    <td>${inmueble.direccion }</td>
    <td>${inmueble.precio }</td>
+   <td><a href="detalle.html?id=${inmueble.idInmueble}"> Ver detalle</a></td>
   </tr>
    </c:forEach>
 </table>
