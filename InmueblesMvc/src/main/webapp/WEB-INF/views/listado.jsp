@@ -12,7 +12,11 @@
 </head>
 
 <body>
-<table>
+Buscar por direccion:<input type="text" id="txtBuscar" 
+				placeholder="Pon tu busqueda">
+	   <input type="button" id="btnBuscar" value="buscar" onclick="buscar()"> 
+
+<table id="tblDatos">
 <c:forEach items="${inmuebles}" var="inmueble">
  <tr>
    <td>${inmueble.idInmueble }</td>
@@ -25,6 +29,33 @@
 </table>
 <div id="divDetalle"></div>
 <script type="text/javascript">
+function buscar(){
+	var tx=$("#txtBuscar").val();
+	if(tx=="")
+		tx="NoBuscoNada";
+	var url="inmueble/buscar/"+tx;	
+
+	$.get(url,function(res){
+
+		var tabla=$("#tblDatos");
+
+		$("#tblDatos tr").each(function(){
+				$(this).remove();
+
+			});
+            for(var i=0;i<res.length;i++){
+			var h="<tr>";
+			h+="<td>"+res[i].idInmueble+"</td>";
+			h+="<td>"+res[i].direccion+"</td>";
+			h+="<td>"+res[i].precio+"</td>";
+			h+="<td><a href='detalle_"+res[i].idInmueble+".html'> Ver Detalle</a> ";
+			h+="<a href='#' onclick='evento("+res[i].idInmueble+")'>Detalle en ajax</a></td>";
+			h+="</tr>";	
+			tabla.append(h);
+			}
+    });
+
+}
 function evento(id){
   	var url="inmueble/"+id;
   	$.get(url,function(res){
