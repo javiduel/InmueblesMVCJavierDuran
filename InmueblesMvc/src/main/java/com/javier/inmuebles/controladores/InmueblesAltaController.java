@@ -39,8 +39,8 @@ public class InmueblesAltaController {
 		Map<Integer,String> lp=daoPropietario.getMapaOptions();
 		Map<Integer,String> li=daoInquilino.getMapaOptions();
 
-		modelo.addAttribute("propietario", lp);
-		modelo.addAttribute("inquilino",li);
+		modelo.addAttribute("propietarios", lp);
+		modelo.addAttribute("inquilinos",li);
 		return "alta";
 
 	}
@@ -53,8 +53,8 @@ public class InmueblesAltaController {
 		if(resultado.hasErrors()){
 			Map<Integer,String> lp=daoPropietario.getMapaOptions();
 			Map<Integer,String> li=daoInquilino.getMapaOptions();
-			request.setAttribute("propietario", lp);
-			request.setAttribute("inquilino",li);
+			request.setAttribute("propietarios", lp);
+			request.setAttribute("inquilinos",li);
 			return "alta";
 
 		}
