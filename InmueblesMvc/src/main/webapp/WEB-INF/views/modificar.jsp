@@ -9,11 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Datos del inmueble
-<br />
-<br />	
+      Datos del inmueble<br /><br />
 	<form:form method="post" commandName="inmueble">
-		Direccion:<form:input path="direccion"/><br />
+	  <form:hidden path="idInmueble"/>
+        Direccion:<form:input path="direccion"/><br />
 		Precio:<form:input path="precio"/><br />
 		Propietario: <form:select path="idPropietario">
 			<form:options items="${propietarios}"/>

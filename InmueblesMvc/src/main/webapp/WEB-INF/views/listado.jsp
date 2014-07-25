@@ -32,8 +32,10 @@ Buscar por precio:<input type="text" id="txtBuscarPrecio"
    <td>${inmueble.precio }</td>
    <td><a href="detalle.html?id=${inmueble.idInmueble}"> Ver detalle</a></td>
    <td><a href="#" id="lnkDetalle" onclick="evento(${inmueble.idInmueble})">Ver Detalle en Ajax</a></td>
+   <td><a href="modificarInmueble.html/${inmueble.idInmueble}"> Modificar</a></td>
    <td><a href="#" id="lnkBorrar" onclick="borrar(${inmueble.idInmueble})">Borrar</a></td>
-  </tr>
+ 
+</tr>
  </c:forEach>
 </table>
 <div id="divDetalle"></div>
