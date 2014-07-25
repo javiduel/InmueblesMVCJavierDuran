@@ -12,11 +12,11 @@ Datos del inmueble<br />
 		Direccion:<form:input path="direccion"/><br />
 		Precio:<form:input path="precio"/><br />
 		IdPropietario: <form:select path="idPropietario">
-			<form:options items="${propietario}"/>
+			<form:options items="${propietarios}"/>
 		</form:select>
 		<br />
 		IdInquilino: <form:select path="idInquilino">
-			<form:options items="${inquilino}"/>
+			<form:options items="${inquilinos}"/>
 		</form:select>
 		<br />
 	<input type="submit" value="Guardar" />

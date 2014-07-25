@@ -19,10 +19,11 @@ Buscar por direccion:<input type="text" id="txtBuscar"
 Buscar por precio:<input type="text" id="txtBuscarPrecio" 
 				placeholder="Pon tu precio">
 	   <input type="button" id="btnBuscarPrecio" value="buscarPrecio" onclick="buscarPrecio()"> 	   
-	   
-	   
-	   
-
+<br />
+<br />
+<a href="altaInmueble.html">Añadir Inmueble</a>
+<br />
+<br />	   
 <table id="tblDatos">
 <c:forEach items="${inmuebles}" var="inmueble">
  <tr>
