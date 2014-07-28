@@ -45,9 +45,10 @@ public class InmueblesRestController {
 
 		if(texto.equals("NoBuscoNada"))
 			texto="";
-
-		Map<String, Object> params=new HashMap();
-		params.put("texto", "%"+texto+"%");
+		Double precioBuscar=Double.parseDouble(texto);
+         
+        Map<String, Object> params=new HashMap();
+		params.put("precioBuscar", precioBuscar);
 		List<Inmueble> l=daoInmueble.find("Inmueble.buscadorPrecio", params);
 		return l;
 

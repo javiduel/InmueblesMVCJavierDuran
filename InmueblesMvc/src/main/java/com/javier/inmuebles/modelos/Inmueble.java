@@ -26,7 +26,7 @@ import org.hibernate.annotations.NamedQuery;
 )
 @NamedQueries({
      @NamedQuery(name="Inmueble.buscador", query="from Inmueble i where i.direccion like :texto"),
-     @NamedQuery(name = "Inmueble.buscadorPrecio", query = "from Inmueble i where i.precio= :texto")
+     @NamedQuery(name = "Inmueble.buscadorPrecio", query = "from Inmueble i where i.precio= :precioBuscar")
 })
 
 
