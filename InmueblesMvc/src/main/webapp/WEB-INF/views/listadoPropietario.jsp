@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript" src ='<c:url value="/resources/js/jquery-1.11.1.min.js"/>'></script>
-<title>Insert title here</title>
+<title>Listado de Propietarios</title>
 </head>
 
 <body>
@@ -81,8 +81,9 @@ function buscar(){
 			h+="<td>"+res[i].idPropietario+"</td>";
 			h+="<td>"+res[i].nombre+"</td>";
 			h+="<td>"+res[i].dni+"</td>";
-			h+="<td><a href='detalle_"+res[i].idPropietario+".html'> Ver Detalle</a> ";
+			h+="<td><a href='detallePropietario.html?id="+res[i].idPropietario+"'> Ver Detalle</a> ";
 			h+="<a href='#' onclick='evento("+res[i].idPropietario+")'>Detalle en ajax</a>";
+			h+="<a href='modificarPropietario.html/"+res[i].idPropietario+"'> Modificar</a> ";
 			h+="<a href='#' onclick='borrar("+res[i].idPropietario+")'>Borrar</a></td>";
 			h+="</tr>";	
 			tabla.append(h);

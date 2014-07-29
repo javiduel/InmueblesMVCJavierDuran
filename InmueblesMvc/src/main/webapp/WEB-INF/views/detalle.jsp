@@ -4,15 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Detalle del Inmueble</title>
 </head>
 <body>
 IdInmueble          : ${inmueble.idInmueble}<br />
 Direccion           : ${inmueble.direccion}<br />
 Precio              : ${inmueble.precio}<br />
 IdPropietario       : ${inmueble.propietario.idPropietario}<br />
+DNI Propietario     : ${inmueble.propietario.dni}<br />
 Nombre Propietario  : ${inmueble.propietario.nombre}<br />
 IdInquilino         : ${inmueble.inquilino.idInquilino}<br />
+DNI Inquilino       : ${inmueble.inquilino.dni}<br />
 Nombre Inquilino    : ${inmueble.inquilino.nombre}<br />
 </body>
 </html>

@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript" src ='<c:url value="/resources/js/jquery-1.11.1.min.js"/>'></script>
-<title>Insert title here</title>
+<title>Listado de Inmuebles</title>
 </head>
 
 <body>
@@ -85,8 +85,9 @@ function buscar(){
 			h+="<td>"+res[i].idInmueble+"</td>";
 			h+="<td>"+res[i].direccion+"</td>";
 			h+="<td>"+res[i].precio+"</td>";
-			h+="<td><a href='detalle_"+res[i].idInmueble+".html'> Ver Detalle</a> ";
+			h+="<td><a href='detalle.html?id="+res[i].idInmueble+"'> Ver Detalle</a> ";
 			h+="<a href='#' onclick='evento("+res[i].idInmueble+")'>Detalle en ajax</a>";
+			h+="<a href='modificarInmueble.html/"+res[i].idInmueble+"'> Modificar</a> ";
 			h+="<a href='#' onclick='borrar("+res[i].idInmueble+")'>Borrar</a></td>";
 			h+="</tr>";	
 			tabla.append(h);
@@ -113,8 +114,10 @@ function buscarPrecio(){
 			h+="<td>"+res[i].idInmueble+"</td>";
 			h+="<td>"+res[i].direccion+"</td>";
 			h+="<td>"+res[i].precio+"</td>";
-			h+="<td><a href='detalle_"+res[i].idInmueble+".html'> Ver Detalle</a> ";
-			h+="<a href='#' onclick='evento("+res[i].idInmueble+")'>Detalle en ajax</a></td>";
+			h+="<td><a href='detalle.html?id="+res[i].idInmueble+"'> Ver Detalle</a> ";
+			h+="<a href='#' onclick='evento("+res[i].idInmueble+")'>Detalle en ajax</a>";
+			h+="<a href='modificarInmueble.html/"+res[i].idInmueble+"'> Modificar</a> ";
+			h+="<a href='#' onclick='borrar("+res[i].idInmueble+")'>Borrar</a></td>";
 			h+="</tr>";	
 			tabla.append(h);
 			}

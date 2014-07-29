@@ -6,10 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Modificar Inmueble</title>
 </head>
 <body>
-      Datos del inmueble<br /><br />
+      Datos del inmueble a Modificar<br /><br />
 	<form:form method="post" commandName="inmueble">
 	  <form:hidden path="idInmueble"/>
         Direccion:<form:input path="direccion"/><br />

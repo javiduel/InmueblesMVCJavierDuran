@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript" src ='<c:url value="/resources/js/jquery-1.11.1.min.js"/>'></script>
-<title>Insert title here</title>
+<title>Listado de Inquilinos</title>
 </head>
 
 <body>
@@ -31,7 +31,7 @@ Buscar por nombre:<input type="text" id="txtBuscar"
    
    <td><a href="detalleInquilino.html?id=${inquilino.idInquilino}"> Ver detalle</a></td>
    <td><a href="#" id="lnkDetalle" onclick="evento(${inquilino.idInquilino})">Ver Detalle en Ajax</a></td>
-   <td><a href="modificarInquilino.html/${inquilino.idInquilino}"> Modificar</a></td>
+   <td><a href="modificarInquilino.html/${inquilino.idInquilino}"> Modificar </a></td>
    <td><a href="#" id="lnkBorrar" onclick="borrar(${inquilino.idInquilino})">Borrar</a></td>
  
 </tr>
@@ -86,8 +86,9 @@ function buscar(){
 			h+="<td>"+res[i].nombre+"</td>";
 			h+="<td>"+res[i].edad+"</td>";
 			h+="<td>"+res[i].trabaja+"</td>";
-			h+="<td><a href='detalle_"+res[i].idInquilino+".html'> Ver Detalle</a> ";
+			h+="<td><a href='detalleInquilino.html?id="+res[i].idInquilino+"'> Ver Detalle</a> ";
 			h+="<a href='#' onclick='evento("+res[i].idInquilino+")'>Detalle en ajax</a>";
+			h+="<a href='modificarInquilino.html/"+res[i].idInquilino+"'> Modificar</a> ";
 			h+="<a href='#' onclick='borrar("+res[i].idInquilino+")'>Borrar</a></td>";
 			h+="</tr>";	
 			tabla.append(h);
